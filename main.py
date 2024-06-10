@@ -21,7 +21,7 @@ import tensorflow as tf
 # password = '孙佳和'
 user = '1'
 password = '2'
-model_path = 'face_model_3.keras'
+model_path = 'face_model_5.keras'
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'  # 设置TensorFlow日志级别为ERROR
 threshold = 0.75
 
@@ -232,12 +232,11 @@ class MyMainWindow2(QWidget,Ui_Form2):
         # 释放摄像头并关闭所有窗口
         cap.release()
         self.label.setText('正在训练中')
-        # self.feature_library =md.build_feature_library(self.model, 'face')
         # 保存特征向量库到文件
         with open('feature_library.pkl', 'wb') as file:
             pickle.dump(self.feature_library, file)
         self.label.setPixmap(self.bg)
-        # md.train()
+
 
 
     #模型推理
